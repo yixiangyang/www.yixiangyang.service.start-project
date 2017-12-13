@@ -1,7 +1,7 @@
 package com.yixiangyang.java.employee;
 
 public class Manager extends Employee{
-	
+	//奖金
 	private double bonus;
 
 	public Manager(String n, double s, int year, int month, int day) {
