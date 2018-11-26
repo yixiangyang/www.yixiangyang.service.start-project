@@ -13,6 +13,7 @@ public class DateUtil {
 		long hoursInMilli = minutesInMilli * 60L;
 		long daysInMilli = hoursInMilli * 24L;
 		long elapsedDays = different / daysInMilli;
+		
 		different %= daysInMilli;
 		long elapsedHours = different / hoursInMilli;
 		different %= hoursInMilli;
