@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class BallComponent extends JPanel{
 	private ArrayList<Ball> balls = new ArrayList<Ball>();
 	public void add(Ball b){

@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class BounceFrame extends JFrame{
 	private BallComponent comp;
 	public static final int DEFAULT_WIDTH = 450;

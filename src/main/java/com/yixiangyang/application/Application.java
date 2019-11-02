@@ -2,10 +2,12 @@ package com.yixiangyang.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 //@EnableUtcConfig
 //@RestController
 @SpringBootApplication
+@ComponentScan(basePackages={"com.yixiangyang.java.annotation"})
 public class Application {
 
 	/*@Value("${book.author}")
