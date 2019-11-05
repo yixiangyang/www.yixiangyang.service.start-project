@@ -12,6 +12,7 @@ public class CloneTest {
 			Employee2 original = new CloneTest().new Employee2("aaaaa", 2222);
 			original.setHireDay(2017, 11, 14);
 			Employee2 copy = original.clone();
+			System.out.println(copy.toString());
 			copy.raiseSalary(100);
 			copy.setHireDay(2012, 12, 12);
 			System.out.println("original:"+original.toString());
