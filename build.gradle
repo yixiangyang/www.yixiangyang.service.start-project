@@ -11,8 +11,8 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
-//apply plugin: 'org.springframework.boot'
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
 jar {
     baseName = 'yixiangyang-start-service'
     version =  '0.0.1-SNAPSHOT'
@@ -24,10 +24,15 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
+////	mavenCentral()
+//	maven {url "http://localhost:8081/nexus/content/repositories/aliyun/"}
+//	maven {url "http://localhost:8081/nexus/content/repositories/sonatype/"}
+//	maven {url "http://localhost:8081/nexus/content/repositories/central/"}
+	mavenLocal() //1.优先查找本地maven库，性能最好
+	maven{//2.其次查找aliyun maven库
+		url'http://maven.aliyun.com/nexus/content/groups/public/'
+	}
 	mavenCentral()
-	maven {url "http://localhost:8081/nexus/content/repositories/aliyun/"}
-	maven {url "http://localhost:8081/nexus/content/repositories/sonatype/"}
-	maven {url "http://localhost:8081/nexus/content/repositories/central/"}
 }
 
 dependencies {
@@ -38,6 +43,10 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE') {
       exclude module:'jackson-databind' 
     }
+// https://mvnrepository.com/artifact/org.springframework/org.springframework.context
+    //compile group: 'org.springframework', name: 'org.springframework.context', version: '3.1.0.release'
+	compile group: 'org.springframework', name: 'spring-context', version: '4.3.11.RELEASE'
+
 	compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
 	compile group: 'com.alibaba', name: 'fastjson', version: '1.2.17'
 	compile group: 'com.alibaba', name: 'druid', version: '1.0.26'
