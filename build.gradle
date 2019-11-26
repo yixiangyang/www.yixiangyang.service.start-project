@@ -25,12 +25,14 @@ targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
-	maven {url "http://localhost:8081/nexus/content/repositories/aliyun/"}
-	maven {url "http://localhost:8081/nexus/content/repositories/sonatype/"}
-	maven {url "http://localhost:8081/nexus/content/repositories/central/"}
+	//maven {url "http://localhost:8081/nexus/content/repositories/aliyun/"}
+	//maven {url "http://localhost:8081/nexus/content/repositories/sonatype/"}
+	//maven {url "http://localhost:8081/nexus/content/repositories/central/"}
 }
 
 dependencies {
+    compile group: 'org.apache.poi', name: 'poi', version: '4.0.1'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.0.1'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-jetty', version: '1.4.0.RELEASE'
     compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.1.1'
     //compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.4.0.RELEASE'

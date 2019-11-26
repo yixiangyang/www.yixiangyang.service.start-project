@@ -10,12 +10,13 @@ import com.yixiangyang.service.UserService;
 
 @RestController
 public class UserController {
-//	@Resource
-//	private UserService userService;
-//	
-//	@RequestMapping(value = "/v1/aa",method = RequestMethod.GET)
-//	public String getTest(){
+	@Resource
+	private UserService userService;
+	
+	@RequestMapping(value = "/v1/aa",method = RequestMethod.GET)
+	public String getTest(){
 //		userService.addUser();
-//		return "aaa";
-//	}
+		userService.exportUserLogin();
+		return "aaa";
+	}
 }
