@@ -19,6 +19,8 @@ import com.yixiangyang.java.util.Line;
 import com.yixiangyang.mapper.UserMapper;
 import com.yixiangyang.model.EmpLogin;
 import com.yixiangyang.model.User;
+import com.yixiangyang.mysql.datasource.aop.MysqlMaster;
+import com.yixiangyang.mysql.datasource.aop.MysqlSlave;
 import com.yixiangyang.service.UserService;
 @Service
 public class UserServiceImpl implements UserService{
@@ -65,6 +67,22 @@ public class UserServiceImpl implements UserService{
 		}
 		ExcelUtil1.exportExcel(headerList, lines, "", "用户登录的数据");
 		
+	}
+
+	@Override
+//	@MysqlSlave
+	public List<User> getUsers() {
+		List<User> users = userMapper.getUsers();
+		return users;
+	}
+
+	@Override
+	@MysqlSlave
+	public List<User> getSlave() {
+		List<User> users = userMapper.getUsers();
+		//userMapper.searchUserLogin();
+//		userMapper2.selectAll();
+		return users;
 	}
 
 }

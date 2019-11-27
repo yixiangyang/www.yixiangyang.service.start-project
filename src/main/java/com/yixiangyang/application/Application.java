@@ -16,7 +16,7 @@ import com.yixiangyang.service.UserService;
 @RestController
 @SpringBootApplication
 //@ComponentScan(basePackages={"com.yixiangyang.java.annotation"})
-@ComponentScan(basePackages = { "com.yixiangyang.controller", "com.yixiangyang.service","com.yixiangyang.java.annotation" })
+@ComponentScan(basePackages = { "com.yixiangyang.controller","com.yixiangyang.mysql.datasource.aop", "com.yixiangyang.service","com.yixiangyang.java.annotation" })
 @MapperScan(basePackages= {"com.yixiangyang.mapper"})
 public class Application {
 
