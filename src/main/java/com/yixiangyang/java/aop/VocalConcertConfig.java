@@ -8,6 +8,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Configuration
 @EnableAspectJAutoProxy
 @ComponentScan
+//@ComponentScan(basePackages = {"com.yixiangyang.java.aop"})
 public class VocalConcertConfig {
 
     @Bean

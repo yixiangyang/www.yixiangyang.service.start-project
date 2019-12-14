@@ -12,19 +12,20 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'java'
+apply plugin: "idea"
 apply plugin: 'org.springframework.boot'
 jar {
-    baseName = 'yixiangyang-start-service'
-    version =  '0.0.1-SNAPSHOT'
+	baseName = 'yixiangyang-start-service'
+	version =  '0.0.1-SNAPSHOT'
 }
-tasks.withType(JavaCompile) {  
-    options.encoding = "UTF-8"  
-}  
+tasks.withType(JavaCompile) {
+	options.encoding = "UTF-8"
+}
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-////	mavenCentral()
+	mavenCentral()
 //	maven {url "http://localhost:8081/nexus/content/repositories/aliyun/"}
 //	maven {url "http://localhost:8081/nexus/content/repositories/sonatype/"}
 //	maven {url "http://localhost:8081/nexus/content/repositories/central/"}
@@ -39,20 +40,23 @@ repositories {
 
 dependencies {
 // https://mvnrepository.com/artifact/hikari-cp/hikari-cp
-compile group: 'com.zaxxer', name: 'HikariCP', version: '2.3.9'
+	compile group: 'com.zaxxer', name: 'HikariCP', version: '2.3.9'
 
-    compile group: 'org.apache.poi', name: 'poi', version: '4.0.1'
-    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.0.1'
+	// https://mvnrepository.com/artifact/org.apache.poi/poi
+	compile group: 'org.apache.poi', name: 'poi', version: '4.1.1'
+
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.1'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-jetty', version: '1.4.0.RELEASE'
-    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.1.1'
-    //compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.4.0.RELEASE'
-    //compile group: 'org.springframework.boot', name: 'spring-boot-starter-remote-shell', version: '1.4.0.RELEASE'
-    compile('org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE') {
-      exclude module:'jackson-databind' 
-    }
+	compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.1.1'
+	//compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.4.0.RELEASE'
+	//compile group: 'org.springframework.boot', name: 'spring-boot-starter-remote-shell', version: '1.4.0.RELEASE'
+	compile('org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE') {
+		exclude module:'jackson-databind'
+	}
 // https://mvnrepository.com/artifact/org.springframework/org.springframework.context
-    //compile group: 'org.springframework', name: 'org.springframework.context', version: '3.1.0.release'
+	//compile group: 'org.springframework', name: 'org.springframework.context', version: '3.1.0.release'
 	compile group: 'org.springframework', name: 'spring-context', version: '4.3.11.RELEASE'
+	compile group: 'org.projectlombok', name: 'lombok', version: '1.18.10'
 
 	compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
 	compile group: 'com.alibaba', name: 'fastjson', version: '1.2.17'
@@ -62,18 +66,21 @@ compile group: 'com.zaxxer', name: 'HikariCP', version: '2.3.9'
 	compile group: 'io.netty', name: 'netty-all', version: '4.1.6.Final'
 	compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.8.10'
 	compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
-    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
-    compile group: 'org.springframework.cloud',name:'spring-cloud-starter-task',version:'1.2.2.RELEASE'
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka-server', version: '1.3.5.RELEASE'
-    //compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.5.8.RELEASE'
-    //testCompile group: 'junit', name: 'junit', version: '4.11'
-    //compile group: 'junit', name: 'junit', version: '4.12'
- 
-    //compile group: 'junit', name: 'junit', version: '4.10'
+	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
+	compile group: 'org.springframework.cloud',name:'spring-cloud-starter-task',version:'1.2.2.RELEASE'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka-server', version: '1.3.5.RELEASE'
+	//compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.5.8.RELEASE'
+	//testCompile group: 'junit', name: 'junit', version: '4.11'
+	//compile group: 'junit', name: 'junit', version: '4.12'
+
+	compile group: 'junit', name: 'junit', version: '4.13-beta-1'
+
+//	testCompile group: 'junit', name: 'junit', version: '4.13-rc-1'
+	compile group: 'org.hamcrest', name: 'hamcrest-core', version: '2.2'
+
 	//compile files('lib/jxl.jar')
 	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.4.2.RELEASE'
 	//compile('org.springframework.boot:spring-boot-starter-web')
 	//testCompile('org.springframework.boot:spring-boot-starter-test')
-	
 }

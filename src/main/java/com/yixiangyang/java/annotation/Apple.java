@@ -1,10 +1,6 @@
 package com.yixiangyang.java.annotation;
 
 
-
-
-import org.springframework.beans.factory.annotation.Value;
-
 import com.yixiangyang.java.annotation.FruitColor.Color;
 public class Apple {
 	@FruitName(value="平果")
