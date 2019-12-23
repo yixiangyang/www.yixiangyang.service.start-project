@@ -13,10 +13,14 @@ public class test1 {
 
     @Autowired
     Song mm;
-
+    
+//    ManMan ma;
+synchronized
     @Test
     public void log() {
         mm.song();
+//        ManMan man = new ManMan();
+//        man.song();
     }
 
 }

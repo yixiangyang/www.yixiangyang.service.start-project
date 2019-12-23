@@ -1,9 +1,5 @@
 package com.yixiangyang.java.thread;
 
-import java.util.concurrent.Executors;
-
-import rx.internal.schedulers.CachedThreadScheduler;
-
 public class NotifyTest {
 	private String flag[] = { "true" };
 
