@@ -20,7 +20,7 @@ public class KafkaProduct {
         Producer<String, String> producer = new KafkaProducer<>(props);
 
         //3.在my-topic主题下，发送消息
-        for(int i = 0; i < 100; i++) {
+        for(int i = 900; i < 1000; i++) {
             producer.send(new ProducerRecord<String, String>("my-topic", Integer.toString(i), Integer.toString(i)));
         }
         //4.关闭
