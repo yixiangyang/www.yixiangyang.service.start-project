@@ -1,11 +1,6 @@
 package com.yixiangyang.java.employee;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
-import org.springframework.util.CollectionUtils;
+import java.util.*;
 
 /**
  * 2017-11-13
@@ -22,7 +17,7 @@ public class EmployeeSortTest {
 		staff[1] = new Employee1("tom", 2000);
 		staff[2] = new Employee1("jack", 500000);
 		List<Employee1> list = new ArrayList<>();
-		list = CollectionUtils.arrayToList(staff);
+		list = Arrays.asList(staff);
 		Collections.sort(list,Collections.reverseOrder(new Comparator<Employee1>() {
 			@Override
 			public int compare(Employee1 o1, Employee1 o2) {

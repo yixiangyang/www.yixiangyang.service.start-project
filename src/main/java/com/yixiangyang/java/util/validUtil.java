@@ -1,6 +1,6 @@
 package com.yixiangyang.java.util;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class validUtil {
 	private static final String mobile = "^(13|15|18|17|16)[0-9]{9}$";
